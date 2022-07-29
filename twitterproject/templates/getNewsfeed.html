@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> GetNewsFeed </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">              
+    </head>
+    <body></br></br></br></br></br>
+        <div align="center">
+          <div align="center" class="border">
+             <div class="header">
+                <h1 class="word">GetNewsFeed</h1>
+             </div></br></br></br>
+            <h2 class="word">
+                <form action="{{ url_for('register') }}" method="post">
+                  <div class="msg">{Get the most recent tweeter}</div>
+                    <input id="USER_ID" name="USER_ID" type="text" placeholder="Enter the user id you want to get" class="textbox"/></br></br>
+                    <input type="submit" class="btn" value="Get Tweeter"></br>
+                </form>
+            </h2>
+          </div>
+        </div>
+    </body>
+</html>

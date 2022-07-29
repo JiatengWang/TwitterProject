@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> PostTweet </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">              
+    </head>
+    <body></br></br></br></br></br>
+        <div align="center">
+          <div align="center" class="border">
+             <div class="header">
+                <h1 class="word">PostTweet</h1>
+             </div></br></br></br>
+            <h2 class="word">
+                <form action="{{ url_for('register') }}" method="post">
+                  <div class="msg">{Let's create your tweet}</div>
+                    <input id="USER_ID" name="USER_ID" type="text" placeholder="Enter Your user id" class="textbox"/></br></br>
+                    <input id="TWITTER_CAPTION" name="TWITTER_CAPTION" type="text" placeholder="Enter Your tweeter caption" class="textbox"/></br></br>
+                    <input id="TWITTER_TEXT" name="TWITTER_TEXT" type="text" placeholder="Enter Your tweet text" class="textbox"/></br></br>
+                    <input type="submit" class="btn" value="Post"></br>
+                </form>
+            </h2>
+            <p class="bottom">Save First?  <a class="bottom" href="{{url_for('PostTweet')}}"> Click here</a></p>
+          </div>
+        </div>
+    </body>
+</html>
