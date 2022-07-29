@@ -1,0 +1,36 @@
+CREATE DATABASE IF NOT EXISTS `Twitter_Project` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `Twitter_Project`;
+
+CREATE TABLE Users
+(	
+   	User_Id		    INTEGER			NOT NULL 	AUTO_INCREMENT, 
+	First_Name		CHAR     	 	NOT NULL, 
+	Last_Name		CHAR		 	NOT NULL, 
+    Email			CHAR			NOT NULL,
+    User_name	    varchar(50)     NOT NULL,
+    Password		varchar(255)    NOT NULL, 
+	PRIMARY KEY(User_Id)
+);
+
+CREATE TABLE Relationship 
+(	
+    Follower_Id		INTEGER			NOT NULL, 
+	Follered_Id		INTEGER		 	NOT NULL, 
+	PRIMARY KEY(Follower_Id, Follered_Id),
+	FOREIGN KEY (Follower_Id) REFERENCES Users (User_Id),
+	FOREIGN KEY (Follered_Id) REFERENCES Users (User_Id),
+	CONSTRAINT Follow_By_Themselves CHECK (Follower_Id <> Follered_Id)
+);
+
+CREATE TABLE Twitter 
+(	
+   	Twitter_Id				INTEGER			NOT NULL	AUTO_INCREMENT,
+   	User_Id					INTEGER			NOT NULL, 
+	Content					VARCHAR(2000), 
+	Twitter_Created_Time  	TIMESTAMP		NOT NULL,
+	Twitter_Updated_Time 	TIMESTAMP,
+	Twitter_Link			VARCHAR(2000)	NOT NULL,
+	CONSTRAINT Twitter_Updated_Time CHECK (Twitter_Updated_Time IS NULL OR Twitter_Updated_Time >= Twitter_Created_Time),
+    FOREIGN KEY (Twitter_Id) REFERENCES Users (User_Id),
+	PRIMARY KEY(Twitter_Id)
+);
