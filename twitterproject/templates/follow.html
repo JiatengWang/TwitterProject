@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> FOLLOW </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">              
+    </head>
+    <body></br></br></br></br></br>
+        <div align="center">
+          <div align="center" class="border">
+             <div class="header">
+                <h1 class="word">FOLLOW</h1>
+             </div></br></br></br>
+            <h2 class="word">
+                <form action="{{ url_for('register') }}" method="post">
+                  <div class="msg">{Please fill the following box}</div>
+                    <input id="USER_ID" name="USER_ID" type="text" placeholder="Enter Your user id" class="textbox"/></br></br>
+                    <input id="USER_ID2" name="USER_ID2" type="text" placeholder="Enter the tweeter id you want to follow" class="textbox"/></br></br>
+                    <input type="submit" class="btn" value="Follow"></br>
+                </form>
+            </h2>
+          </div>
+        </div>
+    </body>
+</html>
